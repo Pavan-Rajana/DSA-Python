@@ -9,10 +9,11 @@ class Solution:
             while s[rightPointer] in sett:
                 sett.remove(s[leftPointer])
                 leftPointer+=1
+                
             sett.add(s[rightPointer])
             
             """ Calculation of window length """
-            window = (leftPointer - rightPointer) + 1 
+            window = (rightPointer - leftPointer) + 1 
             
             """ Comparison of longest and window """
             longest = max(longest,window)
@@ -20,6 +21,11 @@ class Solution:
         return longest
     
     
+abs = "abcabcbb"
+
+sol = Solution()
+print(sol.lengthOfLongestSubstring(abs))    
+
 # ? Example: s = "abcabcbb"
 """
 \\Third iteration (r = 2):
